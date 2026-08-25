@@ -20,7 +20,7 @@ const MainContent = () => {
   const [isLoginOpen, setIsLoginOpen] = React.useState(false);
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#07090E] text-slate-800 dark:text-slate-100 selection:bg-amber-500/30 selection:text-amber-600 transition-colors duration-300">
+    <div className="min-h-screen bg-[#07090E] text-slate-100 selection:bg-amber-500/30 selection:text-amber-200">
       <Navbar onOpenLogin={() => setIsLoginOpen(true)} />
 
       {currentView === 'landing' && (
@@ -34,14 +34,14 @@ const MainContent = () => {
 
           {/* Sticky Floating CTA Bar for High Conversion */}
           <div className="fixed bottom-4 left-4 right-4 md:left-auto md:right-8 z-40 max-w-md">
-            <div className="p-3.5 sm:p-4 rounded-2xl bg-white/95 dark:bg-[#0D1220]/95 border border-amber-500/30 shadow-2xl backdrop-blur-xl flex items-center justify-between gap-3">
+            <div className="p-3.5 sm:p-4 rounded-2xl bg-[#0D1220]/95 border border-amber-500/30 shadow-2xl backdrop-blur-xl flex items-center justify-between gap-3">
               <div>
-                <div className="text-[11px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 flex items-center gap-1">
-                  <Sparkles className="w-3 h-3 text-amber-500" />
+                <div className="text-[11px] font-bold uppercase tracking-wider text-amber-400 flex items-center gap-1">
+                  <Sparkles className="w-3 h-3 text-amber-400" />
                   <span>Inscripciones Abiertas</span>
                 </div>
-                <div className="text-sm font-extrabold text-slate-900 dark:text-white">
-                  $5,000 MXN <span className="text-xs text-slate-500 dark:text-slate-400 font-normal sm:inline hidden">• SEP EC1038</span>
+                <div className="text-sm font-extrabold text-white">
+                  $5,000 MXN <span className="text-xs text-slate-400 font-normal sm:inline hidden">• SEP EC1038</span>
                 </div>
               </div>
 

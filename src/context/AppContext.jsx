@@ -195,9 +195,11 @@ export const AppProvider = ({ children }) => {
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
   const [checkoutPlan, setCheckoutPlan] = useState('full'); // 'full' ($5,000) or 'deposit' ($2,000)
 
-  const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('cnpcyf_theme') || 'dark';
-  });
+  useEffect(() => {
+    localStorage.removeItem('cnpcyf_theme');
+    document.body.classList.remove('light-theme');
+    document.documentElement.classList.remove('light-theme');
+  }, []);
 
   useEffect(() => {
     localStorage.setItem('cnpcyf_students', JSON.stringify(students));
@@ -206,19 +208,6 @@ export const AppProvider = ({ children }) => {
   useEffect(() => {
     localStorage.setItem('cnpcyf_links', JSON.stringify(courseLinks));
   }, [courseLinks]);
-
-  useEffect(() => {
-    localStorage.setItem('cnpcyf_theme', theme);
-    if (theme === 'light') {
-      document.body.classList.add('light-theme');
-    } else {
-      document.body.classList.remove('light-theme');
-    }
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
-  };
 
   const registerStudent = (studentData) => {
     const isFull = studentData.plan === 'full';
@@ -288,8 +277,6 @@ export const AppProvider = ({ children }) => {
         setActiveStudent,
         isCheckoutOpen,
         checkoutPlan,
-        theme,
-        toggleTheme,
         openCheckout,
         closeCheckout,
         registerStudent,

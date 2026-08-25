@@ -40,6 +40,7 @@ export const courseInfo = {
     format: "Híbrido (Viernes virtual • Sábado presencial)"
   },
   schedule: {
+    targetDate: "2026-10-09T17:00:00",
     friday: {
       modality: "Virtual en Vivo",
       platform: "Google Meet",
@@ -52,11 +53,11 @@ export const courseInfo = {
       address: "Av. 5 de Febrero #1602, Col. San Pablo, C.P. 76130, Santiago de Querétaro, Qro."
     },
     dates: [
-      { day: "Semana 1", dates: "4 - 5 de Septiembre" },
-      { day: "Semana 2", dates: "11 - 12 de Septiembre" },
-      { day: "Semana 3", dates: "18 - 19 de Septiembre" },
-      { day: "Semana 4", dates: "25 - 26 de Septiembre" },
-      { day: "Semana 5", dates: "2 - 3 de Octubre" }
+      { day: "Semana 1", dates: "9 - 10 de Octubre" },
+      { day: "Semana 2", dates: "16 - 17 de Octubre" },
+      { day: "Semana 3", dates: "23 - 24 de Octubre" },
+      { day: "Semana 4", dates: "30 - 31 de Octubre" },
+      { day: "Semana 5", dates: "6 - 7 de Noviembre" }
     ]
   },
   targetAudience: [

@@ -9,6 +9,7 @@ import { Pricing } from './components/Pricing';
 import { FaqSection } from './components/FaqSection';
 import { Footer } from './components/Footer';
 import { CheckoutModal } from './components/CheckoutModal';
+import { LoginModal } from './components/LoginModal';
 import { StudentPortal } from './components/StudentPortal';
 import { AdminDashboard } from './components/AdminDashboard';
 import { CheckoutSuccess } from './components/CheckoutSuccess';
@@ -16,10 +17,11 @@ import { Sparkles, ArrowRight, ShieldCheck } from 'lucide-react';
 
 const MainContent = () => {
   const { currentView, openCheckout } = useApp();
+  const [isLoginOpen, setIsLoginOpen] = React.useState(false);
 
   return (
     <div className="min-h-screen bg-[#07090E] text-slate-100 selection:bg-amber-500/30 selection:text-amber-200">
-      <Navbar />
+      <Navbar onOpenLogin={() => setIsLoginOpen(true)} />
 
       {currentView === 'landing' && (
         <main>
@@ -59,8 +61,9 @@ const MainContent = () => {
       {currentView === 'admin' && <AdminDashboard />}
       {currentView === 'checkout-success' && <CheckoutSuccess />}
 
-      <Footer />
+      <Footer onOpenAdmin={() => setIsLoginOpen(true)} />
       <CheckoutModal />
+      <LoginModal isOpen={isLoginOpen} onClose={() => setIsLoginOpen(false)} />
     </div>
   );
 };

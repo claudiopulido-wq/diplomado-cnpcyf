@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useApp } from '../context/AppContext';
 import { Scale, Award, BookOpen, Calendar, ShieldCheck, UserCheck, LayoutDashboard, Sparkles } from 'lucide-react';
 
-export const Navbar = () => {
+export const Navbar = ({ onOpenLogin }) => {
   const { currentView, setCurrentView, openCheckout } = useApp();
   const [scrolled, setScrolled] = useState(false);
 
@@ -54,31 +54,13 @@ export const Navbar = () => {
 
         {/* Action Buttons */}
         <div className="flex items-center gap-3">
-          {/* Student / Aula Portal Button */}
+          {/* Acceso a Alumnos Button */}
           <button
-            onClick={() => setCurrentView(currentView === 'portal' ? 'landing' : 'portal')}
-            className={`px-3.5 py-2 text-xs font-semibold rounded-lg border transition-all flex items-center gap-2 ${
-              currentView === 'portal'
-                ? 'bg-amber-500/20 border-amber-400 text-amber-300'
-                : 'bg-slate-900/80 border-slate-700/70 text-slate-300 hover:border-slate-500 hover:text-white'
-            }`}
+            onClick={onOpenLogin}
+            className="px-3.5 py-2 text-xs font-semibold rounded-lg border bg-slate-900/80 border-slate-700/70 text-slate-300 hover:border-amber-400/50 hover:text-white transition-all flex items-center gap-2 cursor-pointer"
           >
             <UserCheck className="w-4 h-4 text-amber-400" />
-            <span className="hidden sm:inline">Aula Alumno</span>
-          </button>
-
-          {/* Admin Dashboard */}
-          <button
-            onClick={() => setCurrentView(currentView === 'admin' ? 'landing' : 'admin')}
-            className={`px-3.5 py-2 text-xs font-semibold rounded-lg border transition-all flex items-center gap-2 ${
-              currentView === 'admin'
-                ? 'bg-purple-500/20 border-purple-400 text-purple-300'
-                : 'bg-slate-900/80 border-slate-700/70 text-slate-300 hover:border-slate-500 hover:text-white'
-            }`}
-            title="Panel de Control Administrativo"
-          >
-            <LayoutDashboard className="w-4 h-4 text-purple-400" />
-            <span className="hidden lg:inline">Admin</span>
+            <span>Acceso Alumnos</span>
           </button>
 
           {/* Inscribirme CTA */}

@@ -6,23 +6,25 @@ import { ShieldCheck, Sparkles, Clock, Calendar, CheckCircle2, ArrowRight, Play,
 export const Hero = () => {
   const { openCheckout } = useApp();
 
-  // Countdown timer logic (targeting upcoming start date)
-  const [timeLeft, setTimeLeft] = useState({
-    days: 12,
-    hours: 8,
-    minutes: 45,
-    seconds: 20
-  });
+  // Countdown timer calculation to launch date (9 de Octubre de 2026)
+  const calculateTimeLeft = () => {
+    const difference = +new Date(courseInfo.schedule.targetDate) - +new Date();
+    if (difference > 0) {
+      return {
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference / 1000 / 60) % 60),
+        seconds: Math.floor((difference / 1000) % 60)
+      };
+    }
+    return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+  };
+
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setTimeLeft(prev => {
-        if (prev.seconds > 0) return { ...prev, seconds: prev.seconds - 1 };
-        if (prev.minutes > 0) return { ...prev, minutes: 59, seconds: 59 };
-        if (prev.hours > 0) return { ...prev, hours: prev.hours - 1, minutes: 59, seconds: 59 };
-        if (prev.days > 0) return { ...prev, days: prev.days - 1, hours: 23, minutes: 59, seconds: 59 };
-        return prev;
-      });
+      setTimeLeft(calculateTimeLeft());
     }, 1000);
     return () => clearInterval(timer);
   }, []);

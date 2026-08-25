@@ -2,7 +2,7 @@ import React from 'react';
 import { courseInfo } from '../data/courseData';
 import { Scale, ShieldCheck, Mail, Phone, MapPin, Globe } from 'lucide-react';
 
-export const Footer = () => {
+export const Footer = ({ onOpenAdmin }) => {
   return (
     <footer className="bg-[#05070B] border-t border-slate-800/80 pt-16 pb-12 text-slate-400 text-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -92,7 +92,12 @@ export const Footer = () => {
             <span>•</span>
             <span>Términos del Servicio</span>
             <span>•</span>
-            <span>Aviso Legal</span>
+            <button 
+              onClick={onOpenAdmin}
+              className="text-slate-600 hover:text-amber-400 transition-colors flex items-center gap-1 cursor-pointer"
+            >
+              <span>Acceso Coordinación 🔒</span>
+            </button>
           </div>
         </div>
       </div>

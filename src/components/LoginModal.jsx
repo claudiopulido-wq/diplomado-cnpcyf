@@ -44,12 +44,12 @@ export const LoginModal = ({ isOpen, onClose }) => {
     e.preventDefault();
     setError('');
 
-    // Default Coordinator/Admin PIN
-    if (adminPin.trim() === '2026' || adminPin.trim() === 'admin2026') {
+    // Secure Coordinator/Admin PIN
+    if (adminPin.trim() === 'Exito2026') {
       setCurrentView('admin');
       onClose();
     } else {
-      setError('PIN o Clave de Administrador incorrecta. (Clave por defecto: 2026)');
+      setError('PIN o Clave de Administrador incorrecta.');
     }
   };
 
@@ -177,7 +177,7 @@ export const LoginModal = ({ isOpen, onClose }) => {
                 />
               </div>
               <p className="text-[11px] text-slate-400 mt-1.5">
-                PIN predeterminado de prueba: <strong className="text-purple-300">2026</strong>
+                Acceso restringido y protegido para la Dirección y Coordinación Académica.
               </p>
             </div>
 

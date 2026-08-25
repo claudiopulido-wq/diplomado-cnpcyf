@@ -219,6 +219,52 @@ export const courseInfo = {
       ]
     }
   ],
+  speakers: [
+    {
+      id: "magistrado-civil",
+      title: "Magistrado Federal en Materia Civil",
+      honorific: "Magistrado de Circuito",
+      specialty: "Derecho Procesal Civil & Justicia Cotidiana",
+      institution: "Poder Judicial de la Federación / TSJ",
+      image: "/speakers/ponente-1.jpg",
+      badge: "Magistrado Ponente Confirmado",
+      bio: "Jurista con más de 25 años de trayectoria en la judicatura federal y estatal. Especialista en la transición procesal al nuevo CNPCyF, autor de múltiples criterios jurisprudenciales en materia de oralidad, debido proceso y valoración probatoria científica.",
+      tags: ["Justicia Oral", "Estructura Procesal", "CNPCyF"]
+    },
+    {
+      id: "magistrada-familiar",
+      title: "Magistrada de Sala Familiar",
+      honorific: "Magistrada Numeraria",
+      specialty: "Derecho Familiar, Infancia y Derechos Humanos",
+      institution: "Tribunal Superior de Justicia",
+      image: "/speakers/ponente-2.jpg",
+      badge: "Magistrada Especialista",
+      bio: "Magistrada de Sala Familiar con alta especialización en perspectiva de género, interés superior de la niñez, medidas cautelares urgentes y solución restaurativa de controversias parentales bajo el nuevo marco procesal nacional.",
+      tags: ["Procedimientos Familiares", "Perspectiva de Género", "Medidas Cautelares"]
+    },
+    {
+      id: "juez-oralidad",
+      title: "Juez Especializado en Oralidad",
+      honorific: "Juez de Primera Instancia",
+      specialty: "Técnicas de Litigación Oral & Desahogo de Pruebas",
+      institution: "Juzgados Orales del Poder Judicial",
+      image: "/speakers/ponente-3.jpg",
+      badge: "Juez Instructor en Juicios Orales",
+      bio: "Juez de control y juicio oral con amplia experiencia en la conducción de audiencias preliminares, desahogo de interrogatorios, debate de objeciones procesales y emisión de sentencias orales motivadas.",
+      tags: ["Audiencias Orales", "Objeciones", "Teoría del Caso"]
+    },
+    {
+      id: "magistrada-apelacion",
+      title: "Magistrada Especialista en Recursos y Ejecución",
+      honorific: "Magistrada de Tribunal Colegiado",
+      specialty: "Sistema Recursivo, Apelación y Ejecución de Sentencias",
+      institution: "Tribunal Colegiado de Apelación",
+      image: "/speakers/ponente-4.jpg",
+      badge: "Magistrada Colegiada",
+      bio: "Doctora en Derecho Procesal y Magistrada Colegiada. Catedrática de posgrado y capacitadora judicial nacional en la redacción y combate de agravios, resoluciones definitivas y ejecución procesal forzosa.",
+      tags: ["Segunda Instancia", "Recurso de Apelación", "Ejecución"]
+    }
+  ],
   faqs: [
     {
       question: "¿El diplomado cuenta con validez oficial?",
@@ -234,7 +280,7 @@ export const courseInfo = {
     },
     {
       question: "¿Cómo puedo realizar mi pago de $5,000.00 MXN?",
-      answer: "Puedes pagar de forma 100% segura mediante tarjeta de crédito o débito a través de Stripe (liga disponible en nuestra página o Instagram @certificacionesuniceq). Puedes realizar el pago total de $5,000.00 MXN o apartar tu lugar con $2,000.00 MXN y cubrir el resto posteriormente."
+      answer: "Puedes pagar de forma 100% segura mediante tarjeta de crédito o débito a través de Stripe (liga directa https://uniceq.carrd.co). Puedes realizar el pago total de $5,000.00 MXN o apartar tu lugar con $2,000.00 MXN y cubrir el resto posteriormente."
     },
     {
       question: "¿Qué material procesal recibiré?",

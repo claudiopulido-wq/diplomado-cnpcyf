@@ -4,6 +4,7 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { ValueProposition } from './components/ValueProposition';
 import { Curriculum } from './components/Curriculum';
+import { SpeakersSection } from './components/SpeakersSection';
 import { ScheduleLocation } from './components/ScheduleLocation';
 import { Pricing } from './components/Pricing';
 import { FaqSection } from './components/FaqSection';
@@ -28,6 +29,7 @@ const MainContent = () => {
           <Hero />
           <ValueProposition />
           <Curriculum />
+          <SpeakersSection />
           <ScheduleLocation />
           <Pricing />
           <FaqSection />

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useApp } from '../context/AppContext';
-import { courseInfo } from '../data/courseData';
-import { Award, UserCheck, Sparkles, Sun, Moon } from 'lucide-react';
+import { Award, UserCheck, Sparkles, Scale } from 'lucide-react';
 
 export const Navbar = ({ onOpenLogin }) => {
   const { setCurrentView, openCheckout } = useApp();
@@ -43,10 +42,13 @@ export const Navbar = ({ onOpenLogin }) => {
         </div>
 
         {/* Navigation Links */}
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-          <a href="#temario" className="hover:text-amber-400 transition-colors">Temario (10 Módulos)</a>
-          <a href="#certificacion" className="hover:text-amber-400 transition-colors flex items-center gap-1.5">
-            <Award className="w-4 h-4 text-amber-400" /> Validez SEP EC1038
+        <nav className="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-300">
+          <a href="#temario" className="hover:text-amber-400 transition-colors">Temario</a>
+          <a href="#certificacion" className="hover:text-amber-400 transition-colors flex items-center gap-1">
+            <Award className="w-3.5 h-3.5 text-amber-400" /> Validez SEP
+          </a>
+          <a href="#ponentes" className="hover:text-amber-400 transition-colors flex items-center gap-1 text-amber-300 font-semibold">
+            <Scale className="w-3.5 h-3.5 text-amber-400" /> Claustro Docente
           </a>
           <a href="#calendario" className="hover:text-amber-400 transition-colors">Sede & Calendario</a>
           <a href="#inversion" className="hover:text-amber-400 transition-colors">Inversión</a>

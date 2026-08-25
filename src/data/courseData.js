@@ -1,3 +1,9 @@
+import logoUniceq from '../assets/logo-uniceq.png';
+import ponente1 from '../assets/speakers/ponente-1.jpg';
+import ponente2 from '../assets/speakers/ponente-2.jpg';
+import ponente3 from '../assets/speakers/ponente-3.jpg';
+import ponente4 from '../assets/speakers/ponente-4.jpg';
+
 export const courseInfo = {
   title: "Diplomado de Alta Especialización en Código Nacional de Procedimientos Civiles y Familiares",
   shortTitle: "Diplomado CNPCyF",
@@ -33,7 +39,7 @@ export const courseInfo = {
     stripePaymentUrl: "https://uniceq.carrd.co",
     stripeDepositUrl: "https://uniceq.carrd.co"
   },
-  logoUrl: "/logo-uniceq.png",
+  logoUrl: logoUniceq,
   duration: {
     weeks: "5 semanas",
     hours: "22 horas académicas",
@@ -226,7 +232,7 @@ export const courseInfo = {
       honorific: "Magistrado de Circuito",
       specialty: "Derecho Procesal Civil & Justicia Cotidiana",
       institution: "Poder Judicial de la Federación / TSJ",
-      image: "/speakers/ponente-1.jpg",
+      image: ponente1,
       badge: "Magistrado Ponente Confirmado",
       bio: "Jurista con más de 25 años de trayectoria en la judicatura federal y estatal. Especialista en la transición procesal al nuevo CNPCyF, autor de múltiples criterios jurisprudenciales en materia de oralidad, debido proceso y valoración probatoria científica.",
       tags: ["Justicia Oral", "Estructura Procesal", "CNPCyF"]
@@ -237,7 +243,7 @@ export const courseInfo = {
       honorific: "Magistrada Numeraria",
       specialty: "Derecho Familiar, Infancia y Derechos Humanos",
       institution: "Tribunal Superior de Justicia",
-      image: "/speakers/ponente-2.jpg",
+      image: ponente2,
       badge: "Magistrada Especialista",
       bio: "Magistrada de Sala Familiar con alta especialización en perspectiva de género, interés superior de la niñez, medidas cautelares urgentes y solución restaurativa de controversias parentales bajo el nuevo marco procesal nacional.",
       tags: ["Procedimientos Familiares", "Perspectiva de Género", "Medidas Cautelares"]
@@ -248,7 +254,7 @@ export const courseInfo = {
       honorific: "Juez de Primera Instancia",
       specialty: "Técnicas de Litigación Oral & Desahogo de Pruebas",
       institution: "Juzgados Orales del Poder Judicial",
-      image: "/speakers/ponente-3.jpg",
+      image: ponente3,
       badge: "Juez Instructor en Juicios Orales",
       bio: "Juez de control y juicio oral con amplia experiencia en la conducción de audiencias preliminares, desahogo de interrogatorios, debate de objeciones procesales y emisión de sentencias orales motivadas.",
       tags: ["Audiencias Orales", "Objeciones", "Teoría del Caso"]
@@ -259,7 +265,7 @@ export const courseInfo = {
       honorific: "Magistrada de Tribunal Colegiado",
       specialty: "Sistema Recursivo, Apelación y Ejecución de Sentencias",
       institution: "Tribunal Colegiado de Apelación",
-      image: "/speakers/ponente-4.jpg",
+      image: ponente4,
       badge: "Magistrada Colegiada",
       bio: "Doctora en Derecho Procesal y Magistrada Colegiada. Catedrática de posgrado y capacitadora judicial nacional en la redacción y combate de agravios, resoluciones definitivas y ejecución procesal forzosa.",
       tags: ["Segunda Instancia", "Recurso de Apelación", "Ejecución"]

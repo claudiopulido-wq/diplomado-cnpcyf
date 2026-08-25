@@ -1,6 +1,7 @@
 import React from 'react';
 import { courseInfo } from '../data/courseData';
-import { Scale, ShieldCheck, Mail, Phone, MapPin, Globe } from 'lucide-react';
+import { ShieldCheck, Mail, Phone, MapPin, Globe } from 'lucide-react';
+import logoUniceq from '../assets/logo-uniceq.png';
 
 export const Footer = ({ onOpenAdmin }) => {
   return (
@@ -11,12 +12,12 @@ export const Footer = ({ onOpenAdmin }) => {
           {/* Col 1: Identity */}
           <div className="md:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-amber-700 p-[1px]">
-                <div className="w-full h-full bg-[#07090E] rounded-[11px] flex items-center justify-center">
-                  <Scale className="w-5 h-5 text-amber-400" />
-                </div>
-              </div>
-              <div>
+              <img 
+                src={logoUniceq} 
+                alt="UNICEQ" 
+                className="h-12 w-auto object-contain"
+              />
+              <div className="border-l border-slate-800 pl-3">
                 <div className="text-white font-bold text-base">UNICEQ • Universidad Central de Querétaro</div>
                 <div className="text-[11px] text-amber-400/90 font-medium">"{courseInfo.motto}"</div>
               </div>

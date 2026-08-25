@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useApp } from '../context/AppContext';
 import { Award, UserCheck, Sparkles, Scale } from 'lucide-react';
+import logoUniceq from '../assets/logo-uniceq.png';
 
 export const Navbar = ({ onOpenLogin }) => {
   const { setCurrentView, openCheckout } = useApp();
@@ -27,7 +28,7 @@ export const Navbar = ({ onOpenLogin }) => {
           className="flex items-center gap-3 cursor-pointer group"
         >
           <img 
-            src="/logo-uniceq.png" 
+            src={logoUniceq} 
             alt="Logo UNICEQ" 
             className="h-10 sm:h-12 w-auto object-contain transition-transform group-hover:scale-105"
           />

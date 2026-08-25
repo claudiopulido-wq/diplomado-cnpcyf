@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useApp } from '../context/AppContext';
 import { courseInfo } from '../data/courseData';
-import { ShieldCheck, Sparkles, Clock, Calendar, CheckCircle2, ArrowRight, Play, Award, Scale, MapPin } from 'lucide-react';
+import { ShieldCheck, Sparkles, Clock, Calendar, CheckCircle2, ArrowRight, Play, Award, Scale, MapPin, BookOpen } from 'lucide-react';
 
 export const Hero = () => {
   const { openCheckout } = useApp();

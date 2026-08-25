@@ -54,8 +54,8 @@ export const LoginModal = ({ isOpen, onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
-      <div className="relative w-full max-w-md bg-[#0C1220] border border-amber-500/30 rounded-3xl p-6 sm:p-8 shadow-2xl">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/85 backdrop-blur-md">
+      <div className="relative w-full max-w-md bg-[#0C1220] border border-amber-500/30 rounded-3xl p-5 sm:p-8 shadow-2xl max-h-[92vh] overflow-y-auto">
         
         {/* Close Button */}
         <button

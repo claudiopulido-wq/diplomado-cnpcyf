@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
 import { 
   LayoutDashboard, Users, DollarSign, CreditCard, Download, Search, 
-  Filter, CheckCircle2, AlertCircle, Plus, MessageCircle, Link as LinkIcon, 
-  ArrowLeft, RefreshCw, Save
+  CheckCircle2, Plus, MessageCircle, Link as LinkIcon, 
+  ArrowLeft, Save, Mail, Phone
 } from 'lucide-react';
 
 export const AdminDashboard = () => {
@@ -84,44 +84,44 @@ export const AdminDashboard = () => {
   };
 
   return (
-    <div className="pt-28 pb-24 min-h-screen px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div className="pt-24 sm:pt-28 pb-20 min-h-screen px-3 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
       
       {/* Top Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-8 border-b border-slate-800">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 sm:pb-8 border-b border-slate-800">
         <div>
           <button
             onClick={() => setCurrentView('landing')}
-            className="inline-flex items-center gap-1.5 text-xs text-slate-400 hover:text-purple-400 mb-3 transition-colors cursor-pointer"
+            className="inline-flex items-center gap-1.5 text-xs text-slate-400 hover:text-purple-400 mb-2 transition-colors cursor-pointer"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Volver a la Página Principal</span>
           </button>
           
-          <div className="flex items-center gap-3">
-            <div className="p-2 rounded-xl bg-purple-500/15 border border-purple-500/30 text-purple-400">
-              <LayoutDashboard className="w-6 h-6" />
+          <div className="flex items-center gap-2.5 sm:gap-3">
+            <div className="p-2 rounded-xl bg-purple-500/15 border border-purple-500/30 text-purple-400 shrink-0">
+              <LayoutDashboard className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
-            <h1 className="text-2xl sm:text-3xl font-black text-white">
-              Panel de Control Administrativo
+            <h1 className="text-xl sm:text-3xl font-black text-white leading-tight">
+              Panel Administrativo
             </h1>
           </div>
           <p className="text-xs sm:text-sm text-slate-400 mt-1">
-            Monitoreo en tiempo real de inscripciones, recaudación en Stripe y gestión de alumnos.
+            Monitoreo en tiempo real de inscripciones, pagos y gestión de alumnos.
           </p>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3">
           <button
             onClick={handleExportCSV}
-            className="px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 text-xs font-bold flex items-center gap-2 transition-colors cursor-pointer shadow-lg"
+            className="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 text-xs font-bold flex items-center justify-center gap-2 transition-colors cursor-pointer shadow-lg"
           >
             <Download className="w-4 h-4 text-emerald-400" />
-            <span>Exportar Lista (CSV)</span>
+            <span>Exportar CSV</span>
           </button>
 
           <button
             onClick={() => setIsManualModalOpen(true)}
-            className="px-4 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold flex items-center gap-2 transition-colors cursor-pointer shadow-lg shadow-purple-900/30"
+            className="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold flex items-center justify-center gap-2 transition-colors cursor-pointer shadow-lg shadow-purple-900/30"
           >
             <Plus className="w-4 h-4" />
             <span>Inscribir Manualmente</span>
@@ -130,78 +130,80 @@ export const AdminDashboard = () => {
       </div>
 
       {/* KPI Cards Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 my-8">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 my-6 sm:my-8">
         
-        <div className="p-5 rounded-2xl glass-panel border border-slate-700/80">
-          <div className="flex items-center justify-between text-slate-400 text-xs font-medium mb-2">
+        <div className="p-4 sm:p-5 rounded-2xl glass-panel border border-slate-700/80">
+          <div className="flex items-center justify-between text-slate-400 text-[11px] sm:text-xs font-medium mb-1 sm:mb-2">
             <span>Alumnos Inscritos</span>
             <Users className="w-4 h-4 text-amber-400" />
           </div>
-          <div className="text-3xl font-black text-white">{totalStudents}</div>
-          <div className="text-[11px] text-slate-400 mt-1 flex items-center gap-1">
-            <span className="text-emerald-400 font-bold">{fullPaidCount} liquidados</span> • <span>{depositCount} apartados</span>
+          <div className="text-2xl sm:text-3xl font-black text-white">{totalStudents}</div>
+          <div className="text-[10px] sm:text-[11px] text-slate-400 mt-1 flex flex-wrap items-center gap-1">
+            <span className="text-emerald-400 font-bold">{fullPaidCount} liquidados</span>
+            <span className="hidden sm:inline">•</span>
+            <span>{depositCount} apartados</span>
           </div>
         </div>
 
-        <div className="p-5 rounded-2xl glass-panel border border-emerald-500/30">
-          <div className="flex items-center justify-between text-slate-400 text-xs font-medium mb-2">
-            <span>Total Recaudado (Stripe)</span>
+        <div className="p-4 sm:p-5 rounded-2xl glass-panel border border-emerald-500/30">
+          <div className="flex items-center justify-between text-slate-400 text-[11px] sm:text-xs font-medium mb-1 sm:mb-2">
+            <span>Total Recaudado</span>
             <DollarSign className="w-4 h-4 text-emerald-400" />
           </div>
-          <div className="text-3xl font-black text-emerald-400">
-            ${totalRevenue.toLocaleString('es-MX')}.00
+          <div className="text-xl sm:text-3xl font-black text-emerald-400">
+            ${totalRevenue.toLocaleString('es-MX')}
           </div>
-          <div className="text-[11px] text-slate-400 mt-1">
+          <div className="text-[10px] sm:text-[11px] text-slate-400 mt-1">
             Pesos Mexicanos (MXN)
           </div>
         </div>
 
-        <div className="p-5 rounded-2xl glass-panel border border-amber-500/30">
-          <div className="flex items-center justify-between text-slate-400 text-xs font-medium mb-2">
+        <div className="p-4 sm:p-5 rounded-2xl glass-panel border border-amber-500/30">
+          <div className="flex items-center justify-between text-slate-400 text-[11px] sm:text-xs font-medium mb-1 sm:mb-2">
             <span>Saldo por Cobrar</span>
             <CreditCard className="w-4 h-4 text-amber-400" />
           </div>
-          <div className="text-3xl font-black text-amber-300">
-            ${pendingRevenue.toLocaleString('es-MX')}.00
+          <div className="text-xl sm:text-3xl font-black text-amber-300">
+            ${pendingRevenue.toLocaleString('es-MX')}
           </div>
-          <div className="text-[11px] text-slate-400 mt-1">
-            {depositCount} alumnos con saldo de $3,000
+          <div className="text-[10px] sm:text-[11px] text-slate-400 mt-1">
+            {depositCount} alumnos con saldo
           </div>
         </div>
 
-        <div className="p-5 rounded-2xl glass-panel border border-purple-500/30">
-          <div className="flex items-center justify-between text-slate-400 text-xs font-medium mb-2">
-            <span>Valor del Diplomado</span>
+        <div className="p-4 sm:p-5 rounded-2xl glass-panel border border-purple-500/30">
+          <div className="flex items-center justify-between text-slate-400 text-[11px] sm:text-xs font-medium mb-1 sm:mb-2">
+            <span>Tarifa Oficial</span>
             <CheckCircle2 className="w-4 h-4 text-purple-400" />
           </div>
-          <div className="text-3xl font-black text-white">$5,000.00</div>
-          <div className="text-[11px] text-slate-400 mt-1">
-            Tarifa oficial autorizada
+          <div className="text-xl sm:text-3xl font-black text-white">$5,000</div>
+          <div className="text-[10px] sm:text-[11px] text-slate-400 mt-1">
+            Precio final oficial
           </div>
         </div>
 
       </div>
 
-      {/* Roster / Students Table Section */}
-      <div className="p-6 rounded-3xl glass-panel border border-slate-700/80 mb-12">
+      {/* Roster / Students Section */}
+      <div className="p-4 sm:p-6 rounded-3xl glass-panel border border-slate-700/80 mb-8 sm:mb-12">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-          <div className="flex items-center gap-3">
-            <h2 className="text-lg font-bold text-white">Lista de Alumnos Matriculados</h2>
+          <div className="flex items-center gap-2.5 sm:gap-3">
+            <h2 className="text-base sm:text-lg font-bold text-white">Alumnos Matriculados</h2>
             <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-slate-800 text-slate-300">
-              {filteredStudents.length} resultados
+              {filteredStudents.length}
             </span>
           </div>
 
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3">
             {/* Search Input */}
-            <div className="relative">
+            <div className="relative w-full sm:w-64">
               <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
               <input
                 type="text"
-                placeholder="Buscar por nombre, email o folio..."
+                placeholder="Buscar alumno, email..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-9 pr-4 py-2 rounded-xl bg-slate-900 border border-slate-700 text-white text-xs w-56 sm:w-64 focus:outline-none focus:border-purple-400"
+                className="w-full pl-9 pr-4 py-2 rounded-xl bg-slate-900 border border-slate-700 text-white text-xs focus:outline-none focus:border-purple-400"
               />
             </div>
 
@@ -209,7 +211,7 @@ export const AdminDashboard = () => {
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 text-white text-xs focus:outline-none focus:border-purple-400"
+              className="w-full sm:w-auto px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 text-white text-xs focus:outline-none focus:border-purple-400"
             >
               <option value="ALL">Todos los estatus</option>
               <option value="LIQUIDADO">Liquidados ($5,000)</option>
@@ -218,8 +220,69 @@ export const AdminDashboard = () => {
           </div>
         </div>
 
-        {/* Table */}
-        <div className="overflow-x-auto">
+        {/* Mobile View: Card List (< md screens) */}
+        <div className="block md:hidden space-y-3">
+          {filteredStudents.map((stu) => {
+            const isFull = stu.paymentStatus === 'Liquidado';
+            return (
+              <div 
+                key={stu.id} 
+                className="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-3"
+              >
+                <div className="flex items-start justify-between gap-2">
+                  <div>
+                    <span className="text-[10px] font-mono font-bold text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded-md">
+                      {stu.id}
+                    </span>
+                    <h4 className="text-sm font-bold text-white mt-1">{stu.name}</h4>
+                    <p className="text-xs text-slate-400">{stu.profile}</p>
+                  </div>
+
+                  <button
+                    onClick={() => updatePaymentStatus(stu.id, isFull ? 'Apartado ($2,000)' : 'Liquidado')}
+                    className={`px-2.5 py-1 rounded-full text-[10px] font-bold border transition-colors cursor-pointer shrink-0 ${
+                      isFull
+                        ? 'bg-emerald-500/15 border-emerald-500/30 text-emerald-400'
+                        : 'bg-amber-500/15 border-amber-500/30 text-amber-300'
+                    }`}
+                  >
+                    {stu.paymentStatus}
+                  </button>
+                </div>
+
+                <div className="space-y-1 text-xs text-slate-300 border-t border-slate-800/80 pt-2.5">
+                  <div className="flex items-center gap-2 truncate">
+                    <Mail className="w-3.5 h-3.5 text-slate-500 shrink-0" />
+                    <span className="truncate">{stu.email}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Phone className="w-3.5 h-3.5 text-slate-500 shrink-0" />
+                    <span>{stu.phone}</span>
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-between pt-2 border-t border-slate-800/80">
+                  <span className="text-xs font-bold text-white">
+                    Monto: <strong className="text-emerald-400">${stu.amountPaid?.toLocaleString('es-MX')}.00</strong>
+                  </span>
+
+                  <a
+                    href={`https://wa.me/52${stu.phone.replace(/[^0-9]/g, '')}?text=Estimado(a)%20${encodeURIComponent(stu.name)},%20te%20saludamos%20del%20Diplomado%20CNPCyF%20UNICEQ.`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-600/20 text-emerald-300 border border-emerald-500/30 text-xs font-bold"
+                  >
+                    <MessageCircle className="w-3.5 h-3.5" />
+                    <span>WhatsApp</span>
+                  </a>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Desktop View: Full Table (md+ screens) */}
+        <div className="hidden md:block overflow-x-auto">
           <table className="w-full text-left text-xs text-slate-300">
             <thead className="bg-slate-900/90 text-slate-400 uppercase tracking-wider text-[10px] border-b border-slate-800">
               <tr>
@@ -283,15 +346,15 @@ export const AdminDashboard = () => {
       </div>
 
       {/* Course Dynamic Settings: Classroom & Meet Links */}
-      <div className="p-6 sm:p-8 rounded-3xl glass-panel border border-slate-700/80">
+      <div className="p-4 sm:p-8 rounded-3xl glass-panel border border-slate-700/80">
         <div className="flex items-center gap-3 mb-4">
-          <div className="p-2 rounded-xl bg-amber-500/10 text-amber-400">
+          <div className="p-2 rounded-xl bg-amber-500/10 text-amber-400 shrink-0">
             <LinkIcon className="w-5 h-5" />
           </div>
           <div>
-            <h3 className="text-base font-bold text-white">Configuración de Accesos para Alumnos</h3>
+            <h3 className="text-sm sm:text-base font-bold text-white">Configuración de Accesos para Alumnos</h3>
             <p className="text-xs text-slate-400">
-              Estos enlaces se actualizan automáticamente en el Aula Virtual y en los correos de bienvenida de los estudiantes.
+              Se sincroniza automáticamente en el Aula Virtual de cada estudiante.
             </p>
           </div>
         </div>
@@ -303,7 +366,7 @@ export const AdminDashboard = () => {
           </div>
         )}
 
-        <form onSubmit={handleSaveLinks} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <form onSubmit={handleSaveLinks} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
           <div>
             <label className="block text-xs font-semibold text-slate-300 mb-1">
               Liga de Google Classroom:
@@ -343,7 +406,7 @@ export const AdminDashboard = () => {
           <div className="sm:col-span-2 lg:col-span-3 pt-2">
             <button
               type="submit"
-              className="px-6 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-black text-xs font-bold flex items-center gap-2 transition-colors cursor-pointer shadow-lg"
+              className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-black text-xs font-bold flex items-center justify-center gap-2 transition-colors cursor-pointer shadow-lg"
             >
               <Save className="w-4 h-4" />
               <span>Guardar Cambios de Enlaces</span>
@@ -354,9 +417,9 @@ export const AdminDashboard = () => {
 
       {/* Manual Registration Modal */}
       {isManualModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-          <div className="w-full max-w-lg bg-[#0C1220] border border-purple-500/30 rounded-3xl p-6 sm:p-8 shadow-2xl">
-            <h3 className="text-xl font-bold text-white mb-1">Inscribir Alumno Manualmente</h3>
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
+          <div className="w-full max-w-lg bg-[#0C1220] border border-purple-500/30 rounded-3xl p-5 sm:p-8 shadow-2xl max-h-[90vh] overflow-y-auto">
+            <h3 className="text-lg sm:text-xl font-bold text-white mb-1">Inscribir Alumno Manualmente</h3>
             <p className="text-xs text-slate-400 mb-4">
               Para pagos en efectivo, transferencias bancarias o convenios institucionales.
             </p>
@@ -367,28 +430,31 @@ export const AdminDashboard = () => {
                 <input
                   type="text"
                   required
+                  placeholder="Ej. Lic. Fernando Trejo"
                   value={newStudent.name}
                   onChange={(e) => setNewStudent({ ...newStudent, name: e.target.value })}
                   className="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 text-white text-xs"
                 />
               </div>
 
-              <div className="grid grid-cols-2 gap-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                 <div>
                   <label className="block text-xs text-slate-300 mb-1">Correo Electrónico:</label>
                   <input
                     type="email"
                     required
+                    placeholder="correo@ejemplo.com"
                     value={newStudent.email}
                     onChange={(e) => setNewStudent({ ...newStudent, email: e.target.value })}
                     className="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 text-white text-xs"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs text-slate-300 mb-1">Teléfono:</label>
+                  <label className="block text-xs text-slate-300 mb-1">Teléfono (WhatsApp):</label>
                   <input
                     type="tel"
                     required
+                    placeholder="4421234567"
                     value={newStudent.phone}
                     onChange={(e) => setNewStudent({ ...newStudent, phone: e.target.value })}
                     className="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 text-white text-xs"
@@ -396,7 +462,7 @@ export const AdminDashboard = () => {
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                 <div>
                   <label className="block text-xs text-slate-300 mb-1">Modalidad de Pago:</label>
                   <select
@@ -421,7 +487,7 @@ export const AdminDashboard = () => {
                 </div>
               </div>
 
-              <div className="flex items-center justify-end gap-3 pt-4 border-t border-slate-800 mt-4">
+              <div className="flex items-center justify-end gap-2.5 pt-4 border-t border-slate-800 mt-4">
                 <button
                   type="button"
                   onClick={() => setIsManualModalOpen(false)}

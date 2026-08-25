@@ -196,7 +196,7 @@ export const AppProvider = ({ children }) => {
   const [checkoutPlan, setCheckoutPlan] = useState('full'); // 'full' ($5,000) or 'deposit' ($2,000)
 
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('cnpcyf_theme') || 'light';
+    return localStorage.getItem('cnpcyf_theme') || 'dark';
   });
 
   useEffect(() => {
@@ -209,10 +209,10 @@ export const AppProvider = ({ children }) => {
 
   useEffect(() => {
     localStorage.setItem('cnpcyf_theme', theme);
-    if (theme === 'dark') {
-      document.body.classList.add('dark-theme');
+    if (theme === 'light') {
+      document.body.classList.add('light-theme');
     } else {
-      document.body.classList.remove('dark-theme');
+      document.body.classList.remove('light-theme');
     }
   }, [theme]);
 

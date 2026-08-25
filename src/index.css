@@ -2,6 +2,17 @@
 
 @layer base {
   :root {
+    --gold-primary: #D4AF37;
+    --gold-light: #F3E5AB;
+    --gold-dark: #997A15;
+    --bg-page: #07090E;
+    --bg-card: #0E131F;
+    --border-color: rgba(212, 175, 55, 0.15);
+    --text-heading: #FFFFFF;
+    --text-body: #CBD5E1;
+  }
+
+  body.light-theme {
     --gold-primary: #B8860B;
     --gold-light: #D4AF37;
     --gold-dark: #8B6508;
@@ -12,17 +23,9 @@
     --text-body: #334155;
   }
 
-  body.dark-theme {
-    --bg-page: #07090E;
-    --bg-card: #0E131F;
-    --border-color: rgba(212, 175, 55, 0.15);
-    --text-heading: #FFFFFF;
-    --text-body: #CBD5E1;
-  }
-
   body {
-    background-color: var(--bg-page);
-    color: var(--text-body);
+    background-color: #07090E;
+    color: #CBD5E1;
     font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     overflow-x: hidden;
     transition: background-color 0.3s ease, color 0.3s ease;

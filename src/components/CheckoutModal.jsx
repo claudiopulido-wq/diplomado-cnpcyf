@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
 import { courseInfo } from '../data/courseData';
 import { X, Lock, CreditCard, ShieldCheck, Sparkles, CheckCircle2, AlertCircle } from 'lucide-react';
-import confetti from 'canvas-confetti';
 
 export const CheckoutModal = () => {
   const { isCheckoutOpen, closeCheckout, checkoutPlan, registerStudent } = useApp();
@@ -34,18 +33,22 @@ export const CheckoutModal = () => {
     setLoading(true);
 
     // Simulate Stripe payment processing & webhook trigger
-    setTimeout(() => {
+    setTimeout(async () => {
       setLoading(false);
       
-      // Fire confetti celebration
+      // Fire confetti celebration safely
       try {
-        confetti({
-          particleCount: 100,
-          spread: 70,
-          origin: { y: 0.6 }
-        });
+        const confettiModule = await import('canvas-confetti');
+        const confetti = confettiModule.default || confettiModule;
+        if (typeof confetti === 'function') {
+          confetti({
+            particleCount: 100,
+            spread: 70,
+            origin: { y: 0.6 }
+          });
+        }
       } catch (err) {
-        console.log(err);
+        console.log('Confetti effect skipped:', err);
       }
 
       registerStudent({

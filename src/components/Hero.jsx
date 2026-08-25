@@ -55,7 +55,7 @@ export const Hero = () => {
         </div>
 
         {/* Hero Title */}
-        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white max-w-5xl mx-auto leading-[1.1] mb-6">
+        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white max-w-5xl mx-auto leading-[1.1] mb-6">
           Código Nacional de{' '}
           <span className="gold-gradient-text block sm:inline">
             Procedimientos Civiles y Familiares
@@ -63,32 +63,32 @@ export const Hero = () => {
         </h1>
 
         {/* Subtitle */}
-        <p className="text-lg sm:text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto font-light leading-relaxed mb-10">
+        <p className="text-lg sm:text-xl md:text-2xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto font-light leading-relaxed mb-10">
           Teoría, implementación, litigación oral y aplicación práctica para jueces, magistrados, litigantes y servidores públicos.
         </p>
 
         {/* Countdown to Launch */}
-        <div className="max-w-xl mx-auto mb-10 p-4 rounded-2xl glass-panel border border-amber-500/20 shadow-2xl backdrop-blur-xl">
-          <div className="text-xs uppercase tracking-widest text-amber-400/90 font-semibold mb-3 flex items-center justify-center gap-1.5">
-            <Clock className="w-4 h-4 text-amber-400" />
-            <span>Apertura de Generación • Cupo Limitado</span>
+        <div className="max-w-xl mx-auto mb-10 p-4 rounded-2xl glass-panel border border-amber-500/25 shadow-xl backdrop-blur-xl">
+          <div className="text-xs uppercase tracking-widest text-amber-700 dark:text-amber-400 font-bold mb-3 flex items-center justify-center gap-1.5">
+            <Clock className="w-4 h-4 text-amber-500" />
+            <span>Apertura de Generación • 9 y 10 de Octubre 2026</span>
           </div>
           <div className="grid grid-cols-4 gap-2 sm:gap-4 text-center">
-            <div className="p-2 sm:p-3 bg-black/40 rounded-xl border border-white/5">
-              <span className="text-2xl sm:text-3xl font-black text-white">{String(timeLeft.days).padStart(2, '0')}</span>
-              <span className="block text-[10px] sm:text-xs text-slate-400 uppercase tracking-wider mt-1">Días</span>
+            <div className="p-2 sm:p-3 bg-slate-100 dark:bg-black/40 rounded-xl border border-slate-200 dark:border-white/5 shadow-sm">
+              <span className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">{String(timeLeft.days).padStart(2, '0')}</span>
+              <span className="block text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider mt-1">Días</span>
             </div>
-            <div className="p-2 sm:p-3 bg-black/40 rounded-xl border border-white/5">
-              <span className="text-2xl sm:text-3xl font-black text-amber-400">{String(timeLeft.hours).padStart(2, '0')}</span>
-              <span className="block text-[10px] sm:text-xs text-slate-400 uppercase tracking-wider mt-1">Horas</span>
+            <div className="p-2 sm:p-3 bg-slate-100 dark:bg-black/40 rounded-xl border border-slate-200 dark:border-white/5 shadow-sm">
+              <span className="text-2xl sm:text-3xl font-black text-amber-600 dark:text-amber-400">{String(timeLeft.hours).padStart(2, '0')}</span>
+              <span className="block text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider mt-1">Horas</span>
             </div>
-            <div className="p-2 sm:p-3 bg-black/40 rounded-xl border border-white/5">
-              <span className="text-2xl sm:text-3xl font-black text-white">{String(timeLeft.minutes).padStart(2, '0')}</span>
-              <span className="block text-[10px] sm:text-xs text-slate-400 uppercase tracking-wider mt-1">Min</span>
+            <div className="p-2 sm:p-3 bg-slate-100 dark:bg-black/40 rounded-xl border border-slate-200 dark:border-white/5 shadow-sm">
+              <span className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">{String(timeLeft.minutes).padStart(2, '0')}</span>
+              <span className="block text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider mt-1">Min</span>
             </div>
-            <div className="p-2 sm:p-3 bg-black/40 rounded-xl border border-white/5">
-              <span className="text-2xl sm:text-3xl font-black text-amber-400">{String(timeLeft.seconds).padStart(2, '0')}</span>
-              <span className="block text-[10px] sm:text-xs text-slate-400 uppercase tracking-wider mt-1">Seg</span>
+            <div className="p-2 sm:p-3 bg-slate-100 dark:bg-black/40 rounded-xl border border-slate-200 dark:border-white/5 shadow-sm">
+              <span className="text-2xl sm:text-3xl font-black text-amber-600 dark:text-amber-400">{String(timeLeft.seconds).padStart(2, '0')}</span>
+              <span className="block text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider mt-1">Seg</span>
             </div>
           </div>
         </div>
@@ -100,58 +100,58 @@ export const Hero = () => {
             className="w-full sm:w-auto gold-button px-8 py-4 rounded-xl text-base font-extrabold flex items-center justify-center gap-3 cursor-pointer shadow-xl"
           >
             <span>Inscribirme Ahora</span>
-            <span className="px-2 py-0.5 bg-black/20 rounded-md text-xs font-bold">$5,000 MXN</span>
+            <span className="px-2 py-0.5 bg-black/20 rounded-md text-xs font-bold text-white">$5,000 MXN</span>
             <ArrowRight className="w-4 h-4" />
           </button>
 
           <a
             href="#temario"
-            className="w-full sm:w-auto px-6 py-4 rounded-xl text-sm font-semibold text-slate-200 bg-slate-900/90 border border-slate-700 hover:border-amber-500/50 hover:text-white transition-all flex items-center justify-center gap-2"
+            className="w-full sm:w-auto px-6 py-4 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-900/90 border border-slate-300 dark:border-slate-700 hover:border-amber-500 hover:text-amber-600 dark:hover:text-white transition-all flex items-center justify-center gap-2"
           >
-            <BookOpen className="w-4 h-4 text-amber-400" />
+            <BookOpen className="w-4 h-4 text-amber-500" />
             <span>Ver 10 Módulos</span>
           </a>
         </div>
 
         {/* Key Features Quick Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto pt-6 border-t border-slate-800/80">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto pt-6 border-t border-slate-200 dark:border-slate-800/80">
           <div className="p-4 rounded-xl glass-panel text-left flex items-start gap-3.5">
-            <div className="p-2.5 rounded-lg bg-amber-500/10 text-amber-400 border border-amber-500/20">
+            <div className="p-2.5 rounded-lg bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20">
               <Calendar className="w-5 h-5" />
             </div>
             <div>
-              <div className="text-lg font-bold text-white leading-tight">5 Semanas</div>
-              <div className="text-xs text-slate-400 mt-0.5">10 sesiones especializadas</div>
+              <div className="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-tight">5 Semanas</div>
+              <div className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">10 sesiones especializadas</div>
             </div>
           </div>
 
           <div className="p-4 rounded-xl glass-panel text-left flex items-start gap-3.5">
-            <div className="p-2.5 rounded-lg bg-amber-500/10 text-amber-400 border border-amber-500/20">
+            <div className="p-2.5 rounded-lg bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20">
               <Clock className="w-5 h-5" />
             </div>
             <div>
-              <div className="text-lg font-bold text-white leading-tight">22 Horas</div>
-              <div className="text-xs text-slate-400 mt-0.5">Valor curricular y práctico</div>
+              <div className="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-tight">22 Horas</div>
+              <div className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Valor curricular y práctico</div>
             </div>
           </div>
 
           <div className="p-4 rounded-xl glass-panel text-left flex items-start gap-3.5">
-            <div className="p-2.5 rounded-lg bg-amber-500/10 text-amber-400 border border-amber-500/20">
+            <div className="p-2.5 rounded-lg bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20">
               <MapPin className="w-5 h-5" />
             </div>
             <div>
-              <div className="text-lg font-bold text-white leading-tight">Híbrido</div>
-              <div className="text-xs text-slate-400 mt-0.5">Viernes Meet • Sábado UNICEQ</div>
+              <div className="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-tight">Híbrido</div>
+              <div className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Viernes Meet • Sábado UNICEQ</div>
             </div>
           </div>
 
           <div className="p-4 rounded-xl glass-panel text-left flex items-start gap-3.5">
-            <div className="p-2.5 rounded-lg bg-amber-500/10 text-amber-400 border border-amber-500/20">
+            <div className="p-2.5 rounded-lg bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20">
               <Award className="w-5 h-5" />
             </div>
             <div>
-              <div className="text-lg font-bold text-white leading-tight">SEP EC1038</div>
-              <div className="text-xs text-slate-400 mt-0.5">Certificado Oficial Nacional</div>
+              <div className="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-tight">SEP EC1038</div>
+              <div className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Certificado Oficial Nacional</div>
             </div>
           </div>
         </div>

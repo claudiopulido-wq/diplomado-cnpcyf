@@ -42,36 +42,36 @@ export const Pricing = () => {
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch mb-16">
           
           {/* Option 1: Pago Total Recomendado */}
-          <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-b from-[#141B2D] to-[#0A0E1A] border-2 border-amber-500 shadow-2xl shadow-amber-500/10 relative flex flex-col justify-between">
-            <div className="absolute -top-4 right-8 bg-gradient-to-r from-amber-400 to-amber-600 text-black text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full shadow-lg">
+          <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-b from-amber-500/5 via-white to-slate-50 dark:from-[#141B2D] dark:to-[#0A0E1A] border-2 border-amber-500 shadow-2xl shadow-amber-500/10 relative flex flex-col justify-between">
+            <div className="absolute -top-4 right-8 bg-gradient-to-r from-amber-500 to-amber-600 text-white text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full shadow-lg">
               Opción Recomendada
             </div>
 
             <div>
-              <div className="text-xs uppercase tracking-wider font-bold text-amber-400 mb-2">
+              <div className="text-xs uppercase tracking-wider font-bold text-amber-600 dark:text-amber-400 mb-2">
                 Pago Único de Liquidación
               </div>
-              <h3 className="text-2xl font-black text-white mb-2">
+              <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-2">
                 Inscripción Total
               </h3>
-              <p className="text-xs text-slate-300 mb-6">
+              <p className="text-xs text-slate-600 dark:text-slate-300 mb-6">
                 Cubre el 100% de tu diplomado y asegura todos tus beneficios de inmediato.
               </p>
 
               <div className="flex items-baseline gap-2 mb-6">
-                <span className="text-4xl sm:text-5xl font-black text-white">$5,000</span>
-                <span className="text-sm font-semibold text-slate-400">MXN neto</span>
+                <span className="text-4xl sm:text-5xl font-black text-slate-900 dark:text-white">$5,000</span>
+                <span className="text-sm font-semibold text-slate-500 dark:text-slate-400">MXN neto</span>
               </div>
 
-              <div className="p-3.5 rounded-xl bg-black/40 border border-amber-500/20 mb-8 flex items-center gap-2.5 text-xs text-amber-200">
-                <ShieldCheck className="w-4 h-4 text-amber-400 shrink-0" />
+              <div className="p-3.5 rounded-xl bg-amber-50 dark:bg-black/40 border border-amber-500/30 mb-8 flex items-center gap-2.5 text-xs text-amber-900 dark:text-amber-200">
+                <ShieldCheck className="w-4 h-4 text-amber-500 shrink-0" />
                 <span>Incluye certificación SEP-CONOCER EC1038 y Diploma UNICEQ</span>
               </div>
 
               <div className="space-y-3 mb-8">
                 {benefits.map((b, i) => (
-                  <div key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300">
-                    <Check className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                  <div key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                    <Check className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
                     <span>{b}</span>
                   </div>
                 ))}
@@ -83,59 +83,59 @@ export const Pricing = () => {
                 onClick={() => openCheckout('full')}
                 className="w-full gold-button py-4 rounded-xl text-base font-extrabold flex items-center justify-center gap-2 cursor-pointer shadow-xl"
               >
-                <span>Pagar Totalidad ($5,000 MXN)</span>
+                <span>Inscribirme con Pago Total ($5,000 MXN)</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
 
-              <div className="flex items-center justify-center gap-2 mt-4 text-[11px] text-slate-400">
-                <Lock className="w-3.5 h-3.5 text-amber-400" />
-                <span>Pago 100% seguro encriptado vía Stripe</span>
+              <div className="flex items-center justify-center gap-2 mt-4 text-[11px] text-slate-500 dark:text-slate-400">
+                <Lock className="w-3.5 h-3.5 text-amber-500" />
+                <span>Pago 100% seguro en línea</span>
               </div>
             </div>
           </div>
 
           {/* Option 2: Plan con Apartado de $2,000 */}
-          <div className="p-8 sm:p-10 rounded-3xl glass-panel border border-slate-700/80 flex flex-col justify-between">
+          <div className="p-8 sm:p-10 rounded-3xl glass-panel border border-slate-300 dark:border-slate-700/80 flex flex-col justify-between">
             <div>
-              <div className="text-xs uppercase tracking-wider font-bold text-slate-400 mb-2">
+              <div className="text-xs uppercase tracking-wider font-bold text-slate-500 dark:text-slate-400 mb-2">
                 Plan de Pagos
               </div>
-              <h3 className="text-2xl font-bold text-white mb-2">
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
                 Apartado con $2,000
               </h3>
-              <p className="text-xs text-slate-400 mb-6">
+              <p className="text-xs text-slate-600 dark:text-slate-400 mb-6">
                 Garantiza tu lugar hoy mismo y liquida la diferencia durante el diplomado.
               </p>
 
               <div className="flex items-baseline gap-2 mb-6">
-                <span className="text-4xl sm:text-5xl font-black text-white">$2,000</span>
-                <span className="text-sm font-semibold text-slate-400">MXN inicial</span>
+                <span className="text-4xl sm:text-5xl font-black text-slate-900 dark:text-white">$2,000</span>
+                <span className="text-sm font-semibold text-slate-500 dark:text-slate-400">MXN inicial</span>
               </div>
 
-              <div className="p-4 rounded-xl bg-slate-900/90 border border-slate-800 mb-8 space-y-2 text-xs text-slate-300">
+              <div className="p-4 rounded-xl bg-slate-100 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 mb-8 space-y-2 text-xs text-slate-700 dark:text-slate-300">
                 <div className="flex justify-between font-medium">
                   <span>1. Apartado Inicial:</span>
-                  <span className="font-bold text-amber-400">$2,000.00 MXN</span>
+                  <span className="font-bold text-amber-600 dark:text-amber-400">$2,000.00 MXN</span>
                 </div>
-                <div className="flex justify-between font-medium border-t border-slate-800 pt-2">
+                <div className="flex justify-between font-medium border-t border-slate-200 dark:border-slate-800 pt-2">
                   <span>2. Saldo restante:</span>
-                  <span className="font-bold text-white">$3,000.00 MXN</span>
+                  <span className="font-bold text-slate-900 dark:text-white">$3,000.00 MXN</span>
                 </div>
-                <div className="text-[11px] text-slate-400 pt-1">
+                <div className="text-[11px] text-slate-500 dark:text-slate-400 pt-1">
                   * El saldo se liquida antes de concluir el Módulo 3.
                 </div>
               </div>
 
               <div className="space-y-3 mb-8">
-                <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300">
+                <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
                   <Check className="w-4 h-4 text-slate-400 shrink-0 mt-0.5" />
                   <span>Reserva garantizada de tu cupo en la primera edición</span>
                 </div>
-                <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300">
+                <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
                   <Check className="w-4 h-4 text-slate-400 shrink-0 mt-0.5" />
                   <span>Acceso inmediato al Classroom y enlaces Meet</span>
                 </div>
-                <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300">
+                <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
                   <Check className="w-4 h-4 text-slate-400 shrink-0 mt-0.5" />
                   <span>Entrega de constancia y certificación al liquidar</span>
                 </div>
@@ -145,15 +145,15 @@ export const Pricing = () => {
             <div>
               <button
                 onClick={() => openCheckout('deposit')}
-                className="w-full py-4 rounded-xl text-sm font-bold text-white bg-slate-800/90 hover:bg-slate-700 border border-slate-600 hover:border-amber-400 transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg"
+                className="w-full py-4 rounded-xl text-sm font-bold text-slate-900 dark:text-white bg-slate-200 hover:bg-slate-300 dark:bg-slate-800/90 dark:hover:bg-slate-700 border border-slate-300 dark:border-slate-600 hover:border-amber-500 transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md"
               >
                 <span>Apartar mi Lugar ($2,000 MXN)</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
 
-              <div className="flex items-center justify-center gap-2 mt-4 text-[11px] text-slate-400">
+              <div className="flex items-center justify-center gap-2 mt-4 text-[11px] text-slate-500 dark:text-slate-400">
                 <Lock className="w-3.5 h-3.5 text-slate-400" />
-                <span>Cobro seguro vía Stripe</span>
+                <span>Cobro seguro en línea</span>
               </div>
             </div>
           </div>
@@ -161,8 +161,8 @@ export const Pricing = () => {
         </div>
 
         {/* Corporate / Special Invoice note */}
-        <div className="max-w-3xl mx-auto p-4 rounded-xl bg-slate-900/50 border border-slate-800 text-center text-xs text-slate-400">
-          ¿Requieres factura fiscal o inscripción institucional para despachos, juzgados o dependencias? Contáctanos a <span className="text-amber-400 font-semibold">{courseInfo.contact.email}</span> o al WhatsApp <span className="text-amber-400 font-semibold">{courseInfo.contact.phone}</span>.
+        <div className="max-w-3xl mx-auto p-4 rounded-xl bg-slate-100 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 text-center text-xs text-slate-600 dark:text-slate-400">
+          ¿Requieres factura fiscal o inscripción institucional para despachos, juzgados o dependencias? Contáctanos a <span className="text-amber-600 dark:text-amber-400 font-semibold">{courseInfo.contact.email}</span> o al WhatsApp <span className="text-amber-600 dark:text-amber-400 font-semibold">{courseInfo.contact.phone}</span>.
         </div>
 
       </div>

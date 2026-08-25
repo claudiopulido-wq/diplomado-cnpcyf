@@ -30,9 +30,10 @@ export const courseInfo = {
       formattedBalance: "$3,000.00 MXN",
       description: "Aparta tu lugar con $2,000 y liquida $3,000 antes de iniciar el Módulo 3"
     },
-    stripePaymentUrl: "https://buy.stripe.com/test_diplomadocnpcyf", // Enlace de Stripe parametrizable
-    stripeDepositUrl: "https://buy.stripe.com/test_apartadocnpcyf"
+    stripePaymentUrl: "https://uniceq.carrd.co",
+    stripeDepositUrl: "https://uniceq.carrd.co"
   },
+  logoUrl: "/logo-uniceq.png",
   duration: {
     weeks: "5 semanas",
     hours: "22 horas académicas",
@@ -242,7 +243,7 @@ export const courseInfo = {
   ],
   contact: {
     coordinator: "Mtro. Claudio Pulido",
-    email: "claudio.pulido@gesacademico.edu.mx",
+    email: "certificaciones@uniceq.edu.mx",
     phone: "442 352 3965",
     whatsapp: "5214423523965",
     instagram: "@certificacionesuniceq"

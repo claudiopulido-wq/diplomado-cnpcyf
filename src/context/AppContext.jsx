@@ -195,6 +195,10 @@ export const AppProvider = ({ children }) => {
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
   const [checkoutPlan, setCheckoutPlan] = useState('full'); // 'full' ($5,000) or 'deposit' ($2,000)
 
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem('cnpcyf_theme') || 'light';
+  });
+
   useEffect(() => {
     localStorage.setItem('cnpcyf_students', JSON.stringify(students));
   }, [students]);
@@ -204,10 +208,17 @@ export const AppProvider = ({ children }) => {
   }, [courseLinks]);
 
   useEffect(() => {
-    if (!activeStudent && students.length > 0) {
-      setActiveStudent(students[0]);
+    localStorage.setItem('cnpcyf_theme', theme);
+    if (theme === 'dark') {
+      document.body.classList.add('dark-theme');
+    } else {
+      document.body.classList.remove('dark-theme');
     }
-  }, [students, activeStudent]);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
+  };
 
   const registerStudent = (studentData) => {
     const isFull = studentData.plan === 'full';
@@ -255,9 +266,9 @@ export const AppProvider = ({ children }) => {
     setCourseLinks(prev => ({ ...prev, ...newLinks }));
   };
 
+  // Direct redirection to https://uniceq.carrd.co
   const openCheckout = (plan = 'full') => {
-    setCheckoutPlan(plan);
-    setIsCheckoutOpen(true);
+    window.open('https://uniceq.carrd.co', '_blank');
   };
 
   const closeCheckout = () => {
@@ -277,6 +288,8 @@ export const AppProvider = ({ children }) => {
         setActiveStudent,
         isCheckoutOpen,
         checkoutPlan,
+        theme,
+        toggleTheme,
         openCheckout,
         closeCheckout,
         registerStudent,

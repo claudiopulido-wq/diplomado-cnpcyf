@@ -12,11 +12,27 @@
     --text-body: #CBD5E1;
   }
 
+  html {
+    scroll-behavior: smooth;
+    overflow-x: clip;
+    -webkit-text-size-adjust: 100%;
+  }
+
   body {
     background-color: #07090E !important;
     color: #CBD5E1;
     font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-    overflow-x: hidden;
+    overflow-x: clip;
+    min-height: 100%;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: clip;
   }
 
   h1, h2, h3, .font-display {

@@ -35,8 +35,8 @@ const MainContent = () => {
           <FaqSection />
 
           {/* Sticky Floating CTA Bar for High Conversion */}
-          <div className="fixed bottom-4 left-4 right-4 md:left-auto md:right-8 z-40 max-w-md">
-            <div className="p-3.5 sm:p-4 rounded-2xl bg-[#0D1220]/95 border border-amber-500/30 shadow-2xl backdrop-blur-xl flex items-center justify-between gap-3">
+          <div className="fixed bottom-4 left-4 right-4 md:left-auto md:right-8 z-40 max-w-md pointer-events-none">
+            <div className="p-3.5 sm:p-4 rounded-2xl bg-[#0D1220]/95 border border-amber-500/30 shadow-2xl backdrop-blur-xl flex items-center justify-between gap-3 pointer-events-auto">
               <div>
                 <div className="text-[11px] font-bold uppercase tracking-wider text-amber-400 flex items-center gap-1">
                   <Sparkles className="w-3 h-3 text-amber-400" />

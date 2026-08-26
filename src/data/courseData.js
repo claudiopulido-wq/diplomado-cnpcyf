@@ -26,15 +26,20 @@ export const courseInfo = {
     }
   ],
   pricing: {
-    total: 5000,
+    regularTotal: 8000,
+    formattedRegularTotal: "$8,000.00 MXN",
+    earlyBirdTotal: 5000,
+    formattedEarlyBirdTotal: "$5,000.00 MXN",
+    earlyBirdDeadline: "18 de Septiembre",
+    discountAmount: 3000,
+    formattedDiscount: "$3,000.00 MXN",
     currency: "MXN",
-    formattedTotal: "$5,000.00 MXN",
     installmentOption: {
       deposit: 2000,
       formattedDeposit: "$2,000.00 MXN",
       balance: 3000,
       formattedBalance: "$3,000.00 MXN",
-      description: "Aparta tu lugar con $2,000 y liquida $3,000 antes de iniciar el Módulo 3"
+      description: "Aparta tu lugar con $2,000 antes del 18 de septiembre y liquida $3,000 antes de concluir el Módulo 3"
     },
     stripePaymentUrl: "https://uniceq.carrd.co",
     stripeDepositUrl: "https://uniceq.carrd.co"
@@ -285,8 +290,8 @@ export const courseInfo = {
       answer: "Todas las clases se graban y se suben al Portal del Estudiante y Google Classroom en menos de 24 horas. Tendrás acceso ilimitado a las grabaciones, presentaciones y formatos procesales durante y después del diplomado."
     },
     {
-      question: "¿Cómo puedo realizar mi pago de $5,000.00 MXN?",
-      answer: "Puedes pagar de forma 100% segura mediante tarjeta de crédito o débito a través de Stripe (liga directa https://uniceq.carrd.co). Puedes realizar el pago total de $5,000.00 MXN o apartar tu lugar con $2,000.00 MXN y cubrir el resto posteriormente."
+      question: "¿Cuál es el costo del diplomado y qué opciones de pago existen?",
+      answer: "El costo regular total del diplomado es de $8,000.00 MXN. Sin embargo, si te inscribes antes del 18 de septiembre, obtienes una tarifa especial de preventa de $5,000.00 MXN (ahorras $3,000.00 MXN). También puedes apartar tu lugar con $2,000.00 MXN antes del 18 de septiembre para congelar esta tarifa preferencial y cubrir el saldo restante de $3,000.00 MXN antes de concluir el Módulo 3. Aceptamos tarjetas de crédito y débito vía Stripe (https://uniceq.carrd.co)."
     },
     {
       question: "¿Qué material procesal recibiré?",

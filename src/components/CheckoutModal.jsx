@@ -101,9 +101,9 @@ export const CheckoutModal = () => {
                 : 'bg-slate-900/60 border-slate-800 text-slate-400 hover:border-slate-700'
             }`}
           >
-            <div className="text-[11px] uppercase font-bold text-amber-400">Pago Total</div>
+            <div className="text-[11px] uppercase font-bold text-amber-400">Preventa Total</div>
             <div className="text-lg font-black text-white">$5,000 MXN</div>
-            <div className="text-[10px] text-slate-300">Liquidación 100%</div>
+            <div className="text-[10px] text-slate-300">Reg. $8,000 (Ahorras $3,000)</div>
           </button>
 
           <button

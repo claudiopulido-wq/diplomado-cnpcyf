@@ -93,13 +93,19 @@ export const Hero = () => {
           </div>
         </div>
 
+        {/* Early Bird Callout Badge */}
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-amber-500/20 via-amber-500/10 to-amber-600/20 border border-amber-500/40 text-amber-200 text-xs sm:text-sm font-bold mb-8 shadow-lg">
+          <Sparkles className="w-4 h-4 text-amber-400" />
+          <span>Preventa antes del 18 de Septiembre: <strong className="text-white">$5,000 MXN</strong> (Precio regular: <span className="line-through text-slate-400 font-normal">$8,000</span>)</span>
+        </div>
+
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto mb-16">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-lg mx-auto mb-16">
           <button
             onClick={() => openCheckout('full')}
             className="w-full sm:w-auto gold-button px-8 py-4 rounded-xl text-base font-extrabold flex items-center justify-center gap-3 cursor-pointer shadow-xl"
           >
-            <span>Inscribirme Ahora</span>
+            <span>Inscribirme en Preventa</span>
             <span className="px-2 py-0.5 bg-black/20 rounded-md text-xs font-bold text-white">$5,000 MXN</span>
             <ArrowRight className="w-4 h-4" />
           </button>

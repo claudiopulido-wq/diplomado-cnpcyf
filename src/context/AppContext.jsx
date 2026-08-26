@@ -169,44 +169,82 @@ const INITIAL_RECORDINGS = [
   }
 ];
 
+// Safe storage helper with in-memory fallback for iOS Safari private browsing and restricted WebViews
+const inMemoryStorage = new Map();
+
+const safeStorage = {
+  getItem: (key) => {
+    try {
+      if (typeof window !== 'undefined' && window.localStorage) {
+        return window.localStorage.getItem(key);
+      }
+    } catch (e) {
+      console.warn('localStorage read disabled or restricted, using in-memory store:', e);
+    }
+    return inMemoryStorage.get(key) || null;
+  },
+  setItem: (key, value) => {
+    try {
+      if (typeof window !== 'undefined' && window.localStorage) {
+        window.localStorage.setItem(key, value);
+        return;
+      }
+    } catch (e) {
+      console.warn('localStorage write disabled or restricted, using in-memory store:', e);
+    }
+    inMemoryStorage.set(key, value);
+  },
+  removeItem: (key) => {
+    try {
+      if (typeof window !== 'undefined' && window.localStorage) {
+        window.localStorage.removeItem(key);
+        return;
+      }
+    } catch (e) {
+      console.warn('localStorage remove disabled, using in-memory store:', e);
+    }
+    inMemoryStorage.delete(key);
+  }
+};
+
 export const AppProvider = ({ children }) => {
   const [students, setStudents] = useState(() => {
-    const saved = localStorage.getItem('cnpcyf_students');
+    const saved = safeStorage.getItem('cnpcyf_students');
     return saved ? JSON.parse(saved) : INITIAL_STUDENTS;
   });
 
   const [courseLinks, setCourseLinks] = useState(() => {
-    const saved = localStorage.getItem('cnpcyf_links');
+    const saved = safeStorage.getItem('cnpcyf_links');
     return saved ? JSON.parse(saved) : INITIAL_LINKS;
   });
 
   const [materials, setMaterials] = useState(() => {
-    const saved = localStorage.getItem('cnpcyf_materials');
+    const saved = safeStorage.getItem('cnpcyf_materials');
     return saved ? JSON.parse(saved) : INITIAL_MATERIALS;
   });
 
   const [recordings, setRecordings] = useState(() => {
-    const saved = localStorage.getItem('cnpcyf_recordings');
+    const saved = safeStorage.getItem('cnpcyf_recordings');
     return saved ? JSON.parse(saved) : INITIAL_RECORDINGS;
   });
 
   const [currentView, setCurrentView] = useState('landing'); // 'landing' | 'admin' | 'portal' | 'checkout-success'
   const [activeStudent, setActiveStudent] = useState(null);
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
-  const [checkoutPlan, setCheckoutPlan] = useState('full'); // 'full' ($5,000) or 'deposit' ($2,000)
+  const [checkoutPlan, setCheckoutPlan] = useState('full'); // 'full' ($5,000 Preventa) or 'deposit' ($2,000 Apartado)
 
   useEffect(() => {
-    localStorage.removeItem('cnpcyf_theme');
+    safeStorage.removeItem('cnpcyf_theme');
     document.body.classList.remove('light-theme');
     document.documentElement.classList.remove('light-theme');
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('cnpcyf_students', JSON.stringify(students));
+    safeStorage.setItem('cnpcyf_students', JSON.stringify(students));
   }, [students]);
 
   useEffect(() => {
-    localStorage.setItem('cnpcyf_links', JSON.stringify(courseLinks));
+    safeStorage.setItem('cnpcyf_links', JSON.stringify(courseLinks));
   }, [courseLinks]);
 
   const registerStudent = (studentData) => {
@@ -218,7 +256,7 @@ export const AppProvider = ({ children }) => {
       email: studentData.email,
       phone: studentData.phone,
       profile: studentData.profile || 'Abogado(a)',
-      paymentStatus: isFull ? 'Liquidado' : 'Apartado ($2,000)',
+      paymentStatus: isFull ? 'Liquidado (Preventa)' : 'Apartado ($2,000)',
       amountPaid: amount,
       totalAmount: 5000,
       paymentDate: new Date().toISOString().split('T')[0],

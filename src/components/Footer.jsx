@@ -49,7 +49,7 @@ export const Footer = ({ onOpenAdmin }) => {
               <li><a href="#temario" className="hover:text-amber-400 transition-colors">Temario (10 Módulos)</a></li>
               <li><a href="#certificacion" className="hover:text-amber-400 transition-colors">Certificación SEP EC1038</a></li>
               <li><a href="#calendario" className="hover:text-amber-400 transition-colors">Calendario & Sede</a></li>
-              <li><a href="#inversion" className="hover:text-amber-400 transition-colors">Inversión ($5,000 MXN)</a></li>
+              <li><a href="#inversion" className="hover:text-amber-400 transition-colors">Inversión (Preventa $5,000 MXN)</a></li>
               <li><a href="#faqs" className="hover:text-amber-400 transition-colors">Preguntas Frecuentes</a></li>
             </ul>
           </div>

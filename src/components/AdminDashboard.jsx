@@ -173,12 +173,12 @@ export const AdminDashboard = () => {
 
         <div className="p-4 sm:p-5 rounded-2xl glass-panel border border-purple-500/30">
           <div className="flex items-center justify-between text-slate-400 text-[11px] sm:text-xs font-medium mb-1 sm:mb-2">
-            <span>Tarifa Oficial</span>
+            <span>Tarifa Preventa</span>
             <CheckCircle2 className="w-4 h-4 text-purple-400" />
           </div>
           <div className="text-xl sm:text-3xl font-black text-white">$5,000</div>
           <div className="text-[10px] sm:text-[11px] text-slate-400 mt-1">
-            Precio final oficial
+            Hasta 18 Sep (Reg. $8,000)
           </div>
         </div>
 
@@ -470,7 +470,7 @@ export const AdminDashboard = () => {
                     onChange={(e) => setNewStudent({ ...newStudent, plan: e.target.value })}
                     className="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 text-white text-xs"
                   >
-                    <option value="full">Liquidado ($5,000 MXN)</option>
+                    <option value="full">Liquidado Preventa ($5,000 MXN)</option>
                     <option value="deposit">Apartado ($2,000 MXN)</option>
                   </select>
                 </div>

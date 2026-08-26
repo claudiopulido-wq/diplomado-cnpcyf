@@ -121,13 +121,13 @@ export const Curriculum = () => {
             ¿Listo para dominar el nuevo Código Nacional?
           </h3>
           <p className="text-sm text-slate-400 mb-6">
-            Asegura tu lugar en esta primera edición con validez oficial SEP y valor curricular UNICEQ.
+            Asegura tu lugar en esta primera edición con tarifa especial de preventa de <strong>$5,000 MXN</strong> (antes del 18 de septiembre • regular $8,000 MXN) con validez oficial SEP y valor curricular UNICEQ.
           </p>
           <button
             onClick={() => openCheckout('full')}
             className="gold-button px-8 py-3.5 rounded-xl text-sm font-bold inline-flex items-center gap-2 cursor-pointer shadow-lg"
           >
-            <span>Inscribirme al Diplomado ($5,000 MXN)</span>
+            <span>Inscribirme en Preventa ($5,000 MXN)</span>
             <ArrowRight className="w-4 h-4" />
           </button>
         </div>

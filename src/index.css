@@ -14,7 +14,7 @@
 
   html {
     scroll-behavior: smooth;
-    overflow-x: clip;
+    overflow-x: hidden;
     -webkit-text-size-adjust: 100%;
   }
 
@@ -22,7 +22,7 @@
     background-color: #07090E !important;
     color: #CBD5E1;
     font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-    overflow-x: clip;
+    overflow-x: hidden;
     min-height: 100%;
     position: relative;
     -webkit-overflow-scrolling: touch;
@@ -32,7 +32,7 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow-x: clip;
+    overflow-x: hidden;
   }
 
   h1, h2, h3, .font-display {
